@@ -48,6 +48,7 @@ df['Return'] = df['Sell'] / df['Buy'] -1
 df['Equity'] = (1 + df['Return']).cumprod()
 print(df)
 
+# Calculate and plot equity curve + add parameter tunning for rolling mean...   
 
 
 
