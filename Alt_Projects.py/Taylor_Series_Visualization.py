@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
+## Still wrong, check later
 n = 10
 
 def factorial(n):
