@@ -12,8 +12,6 @@ for t in range(1,10):
     df_corr = data[['Returns','Returns_t-1']]
     corr_1 = df_corr.corr()
     corr.append(corr_1.loc['Returns','Returns_t-1'])
-
-print(corr)
-plt.plot(range(1,10), corr, marker='o')
-plt.show()
-
+x = np.arange(1,10,1)
+plt.plot(x,corr)
+plt.show()    
