@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from datetime import datetime, timedelta
 import yfinance as yf
+import numpy as np
 
 data = yf.download('BTC-USD',"2018-1-2","2022-7-9")['Close']
 path = pd.read_csv("fear_and_greed_index.csv")
@@ -37,6 +38,8 @@ df = {'Buy': totbuy, 'Sell': totsell}
 positions = pd.DataFrame(df)
 positions['Returns'] = positions['Sell'] / positions['Buy']
 cum = positions['Returns'].cumprod()
+
+# PLOTTING with AI as lazy
 plt.figure(figsize=(10,5))
 plt.plot(cum.index, cum.values, label='Strategy Cumulative Return')
 plt.xlabel("Trade Number")
